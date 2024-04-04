@@ -54,6 +54,7 @@ const SelectSchedule = ({
       </View>
 
       <Button
+        disabled={!selectedDate || !selectedTime}
         style={{marginTop: 24, borderRadius: 8}}
         buttonColor="#000"
         textColor="#fff"

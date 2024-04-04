@@ -1,4 +1,4 @@
-import {SelectSchedule} from '@/features/order';
+import {SelectAddress, SelectSchedule} from '@/features/order';
 import MainTab from '@/routes/MainTab';
 import {MainStackParamList} from '@/types/routes';
 import {
@@ -14,7 +14,7 @@ const Routes = () => {
 
   return (
     <NavigationContainer ref={navigationRef}>
-      <MainStack.Navigator>
+      <MainStack.Navigator initialRouteName="SelectAddress">
         <MainStack.Screen
           name="MainTab"
           component={MainTab}
@@ -27,6 +27,13 @@ const Routes = () => {
           component={SelectSchedule}
           options={{
             title: 'Select Schedule',
+          }}
+        />
+        <MainStack.Screen
+          name="SelectAddress"
+          component={SelectAddress}
+          options={{
+            title: 'Select Location',
           }}
         />
       </MainStack.Navigator>
