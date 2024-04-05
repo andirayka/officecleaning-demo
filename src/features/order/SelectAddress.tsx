@@ -22,6 +22,7 @@ const SelectAddress = ({navigation}: MainStackScreenProps<'SelectAddress'>) => {
   });
   const [distanceToA, setDistanceToA] = useState(0);
   const [distanceToB, setDistanceToB] = useState(0);
+  const nearestTo = distanceToA < distanceToB ? 'A' : 'B';
 
   // Measure distance between myplace to A and B
   useEffect(() => {
@@ -41,14 +42,20 @@ const SelectAddress = ({navigation}: MainStackScreenProps<'SelectAddress'>) => {
 
   return (
     <DefaultContainer style={{paddingTop: 0}}>
-      <Text variant="titleMedium">
-        Location A = Green, Location B = Orange.
+      <Text variant="titleSmall">
+        Location A = <Text style={{backgroundColor: 'lightgreen'}}>Green</Text>,
+        Location B = <Text style={{backgroundColor: 'orange'}}>Orange</Text>.
       </Text>
-      <Text variant="titleMedium">
-        Me to A = {distanceToA} meter, Me to B = {distanceToB} meter.
+      <Text variant="titleSmall">
+        Me to A ={' '}
+        <Text style={{backgroundColor: 'lightgreen'}}>{distanceToA} meter</Text>
+        , Me to B ={' '}
+        <Text style={{backgroundColor: 'orange'}}>{distanceToB} meter</Text>.
       </Text>
-      <Text variant="titleMedium">
-        Nearest to: {distanceToA < distanceToB ? 'A' : 'B'}
+      <Text variant="titleSmall">Nearest to: {nearestTo}</Text>
+      <Text variant="titleSmall">
+        Time estimation (100 meter=10 minutes):{' '}
+        {nearestTo === 'A' ? distanceToA / 10 : distanceToB / 10} minutes
       </Text>
 
       <MapView
