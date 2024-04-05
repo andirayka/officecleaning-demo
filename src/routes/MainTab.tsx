@@ -5,6 +5,7 @@ import {MainTabParamList} from '@/types/routes';
 import {SelectService} from '@/features/order';
 import {Icon} from 'react-native-paper';
 import {Home} from '@/features/home';
+import {Profile} from '@/features/profile';
 
 const MainTab = createBottomTabNavigator<MainTabParamList>();
 
@@ -29,6 +30,19 @@ export default () => {
           tabBarIcon: ({color}) => (
             <Icon source="camera" color={color} size={20} />
           ),
+        }}
+      />
+      <MainTab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarLabel: 'Profile',
+          tabBarIcon: ({color}) => (
+            <Icon source="account" color={color} size={20} />
+          ),
+          headerShown: true,
+          title: 'Profile',
+          headerTitleAlign: 'center',
         }}
       />
     </MainTab.Navigator>

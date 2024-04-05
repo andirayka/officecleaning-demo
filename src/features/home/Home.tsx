@@ -3,7 +3,7 @@ import {DefaultContainer} from '@/components';
 import {Card, Text} from 'react-native-paper';
 import {Aircond, Commercial, OneTime, Stewardship} from '@/assets/images';
 import {MainTabScreenProps} from '@/types/screenTypes';
-import {Image, useWindowDimensions} from 'react-native';
+import {Image, TouchableOpacity, useWindowDimensions} from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import {formatReadebleDate, formatReadebleTime} from '@/utils';
 import {addHours} from 'date-fns';
@@ -41,14 +41,19 @@ const Home = ({navigation}: MainTabScreenProps<'Home'>) => {
         height={200}
         data={images}
         renderItem={({item}) => (
-          <Image
-            source={item}
-            style={{
-              width: width - 32,
-              height: 200,
-              borderRadius: 8,
-            }}
-          />
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('SelectService');
+            }}>
+            <Image
+              source={item}
+              style={{
+                width: width - 32,
+                height: 200,
+                borderRadius: 8,
+              }}
+            />
+          </TouchableOpacity>
         )}
       />
 
@@ -62,14 +67,19 @@ const Home = ({navigation}: MainTabScreenProps<'Home'>) => {
         height={200}
         data={images}
         renderItem={({item}) => (
-          <Image
-            source={item}
-            style={{
-              width: width - 32,
-              height: 200,
-              borderRadius: 8,
-            }}
-          />
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('SelectService');
+            }}>
+            <Image
+              source={item}
+              style={{
+                width: width - 32,
+                height: 200,
+                borderRadius: 8,
+              }}
+            />
+          </TouchableOpacity>
         )}
       />
     </DefaultContainer>
