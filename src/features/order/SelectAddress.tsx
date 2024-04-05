@@ -1,4 +1,3 @@
-import {StyleSheet} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {DefaultContainer} from '@/components';
 import {Button, Text} from 'react-native-paper';
@@ -89,13 +88,11 @@ const SelectAddress = ({navigation}: MainStackScreenProps<'SelectAddress'>) => {
         contentStyle={{paddingVertical: 4}}
         labelStyle={{fontSize: 18}}
         mode="contained"
-        onPress={() => navigation.navigate('Payment')}>
-        Save
+        onPress={() => navigation.navigate('CalculatePrice')}>
+        Continue
       </Button>
     </DefaultContainer>
   );
 };
 
 export default SelectAddress;
-
-const styles = StyleSheet.create({});

@@ -28,7 +28,7 @@ export const formatReadebleTime = (
 };
 
 export const formatCurrency = (money: string | number): string => {
-  return `Rp ${money.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1.')}`;
+  return `${money.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1.')} SGD`;
 };
 
 export const currencyToNumber = (money: string): number => {

@@ -1,4 +1,4 @@
-import {StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 import React, {useState} from 'react';
 import {DefaultContainer} from '@/components';
 import {Button, Text} from 'react-native-paper';
@@ -69,5 +69,3 @@ const SelectSchedule = ({
 };
 
 export default SelectSchedule;
-
-const styles = StyleSheet.create({});

@@ -1,4 +1,3 @@
-import {StyleSheet} from 'react-native';
 import React from 'react';
 import {DefaultContainer} from '@/components';
 import {Card, Text} from 'react-native-paper';
@@ -49,5 +48,3 @@ const SelectService = ({navigation}: MainTabScreenProps<'SelectService'>) => {
 };
 
 export default SelectService;
-
-const styles = StyleSheet.create({});

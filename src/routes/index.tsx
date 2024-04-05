@@ -1,4 +1,9 @@
-import {SelectAddress, SelectSchedule} from '@/features/order';
+import {
+  CalculatePrice,
+  Payment,
+  SelectAddress,
+  SelectSchedule,
+} from '@/features/order';
 import MainTab from '@/routes/MainTab';
 import {MainStackParamList} from '@/types/routes';
 import {
@@ -14,13 +19,13 @@ const Routes = () => {
 
   return (
     <NavigationContainer ref={navigationRef}>
-      <MainStack.Navigator initialRouteName="SelectAddress">
+      <MainStack.Navigator
+        initialRouteName="MainTab"
+        screenOptions={{headerTitleAlign: 'center'}}>
         <MainStack.Screen
           name="MainTab"
           component={MainTab}
-          options={{
-            headerShown: false,
-          }}
+          options={{headerShown: false}}
         />
         <MainStack.Screen
           name="SelectSchedule"
@@ -34,6 +39,20 @@ const Routes = () => {
           component={SelectAddress}
           options={{
             title: 'Select Location',
+          }}
+        />
+        <MainStack.Screen
+          name="Payment"
+          component={Payment}
+          options={{
+            title: 'Payment Method',
+          }}
+        />
+        <MainStack.Screen
+          name="CalculatePrice"
+          component={CalculatePrice}
+          options={{
+            title: 'Calculate Price',
           }}
         />
       </MainStack.Navigator>
